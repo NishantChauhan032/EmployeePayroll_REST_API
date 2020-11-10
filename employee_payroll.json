@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jeff Bezos",
+      "gender": "M",
+      "salary": "100000"
+    },
+    {
+      "id": 2,
+      "name": "Bill Gates",
+      "gender": "M",
+      "salary": "200000"
+    },
+    {
+      "id": 3,
+      "name": "Mark Zukerberg",
+      "gender": "M",
+      "salary": "300000"
+    },
+    {
+      "id": 4,
+      "name": "Mukesh Ambani",
+      "gender": "M",
+      "salary": 400000
+    }
+  ]
+}
