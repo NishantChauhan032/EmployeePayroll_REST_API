@@ -1,6 +1,7 @@
 package com.capg.restapi;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class EmployeePayrollRestAPIService {
@@ -42,5 +43,15 @@ public class EmployeePayrollRestAPIService {
 				                 .filter(e -> e.getName().equals(name))
 								 .findFirst()
 								 .orElse(null);
+	}
+	
+	public void removeEmployeeFromTheList(Employee employee) {
+		
+		  System.out.println(employee.getId()); 
+		  System.out.println(employee.getName());
+		  System.out.println("size before removing : " + employeesList.size());
+		  System.out.println(employeesList);
+		  employeesList.remove(employee.getId());
+		  System.out.println("size after removing : " + employeesList.size()); 
 	}
 }

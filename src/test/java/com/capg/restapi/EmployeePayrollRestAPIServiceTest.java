@@ -30,7 +30,6 @@ public class EmployeePayrollRestAPIServiceTest {
 	
 	private List<Employee> getEmployeeList() {
 		Response response = RestAssured.get("/employees");
-		System.out.println(response.getContentType());
 		Employee[] employees = new Gson().fromJson(response.asString(), Employee[].class);
 		return Arrays.asList(employees);
 	}
@@ -108,10 +107,23 @@ public class EmployeePayrollRestAPIServiceTest {
 		Assert.assertEquals(200, response.getStatusCode());
 	}
 	
+	
+	@Ignore
 	@Test
 	public void givenAJsonServer_WhenRetrievedEmployees_ShouldMatchEmployeesCount() {
 		List<Employee> employeesList = this.getEmployeesFromJsonServer();
 		Assert.assertEquals(7, employeesList.size());
+	}
+
+	@Test
+	public void givenAnEmployee_WhenDeleted_ShouldBeRemovedFromJsonServer() {
+		Employee employee = employeePayrollRestAPIService.getEmployeeDetailsByName("Bill Gates");
+		System.out.println(employee);
+		employeePayrollRestAPIService.removeEmployeeFromTheList(employee);
+		RequestSpecification request = RestAssured.given();
+		request.header("Content-Type", "application/json");
+		Response response = request.delete("/employees/" + employee.getId());
+		Assert.assertEquals(200, response.getStatusCode());
 	}
 
 }
