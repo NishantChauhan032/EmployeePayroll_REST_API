@@ -94,6 +94,7 @@ public class EmployeePayrollRestAPIServiceTest {
 		Assert.assertEquals(7, getEmployeesFromJsonServer().size());
 	}
 
+	@Ignore
 	@Test
 	public void giveNewSalary_whenUpdated_shouldBeAddedToJsonServer() {
 		employeePayrollRestAPIService.updateSalary("Harshad Mehta", 1000000.0);
@@ -105,6 +106,12 @@ public class EmployeePayrollRestAPIServiceTest {
 		Response response = request.put("/employees/" + employee.getId());
 		System.out.println(response.getStatusCode());
 		Assert.assertEquals(200, response.getStatusCode());
+	}
+	
+	@Test
+	public void givenAJsonServer_WhenRetrievedEmployees_ShouldMatchEmployeesCount() {
+		List<Employee> employeesList = this.getEmployeesFromJsonServer();
+		Assert.assertEquals(7, employeesList.size());
 	}
 
 }
