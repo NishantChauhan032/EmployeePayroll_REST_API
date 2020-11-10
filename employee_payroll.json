@@ -23,6 +23,24 @@
       "name": "Mukesh Ambani",
       "gender": "M",
       "salary": 400000
+    },
+    {
+      "id": 7,
+      "name": "Smriti Mandhana",
+      "gender": "F",
+      "salary": 700000
+    },
+    {
+      "id": 6,
+      "name": "Modi Jee",
+      "gender": "M",
+      "salary": 600000
+    },
+    {
+      "id": 5,
+      "name": "Harshad Mehta",
+      "gender": "M",
+      "salary": 500000
     }
   ]
 }

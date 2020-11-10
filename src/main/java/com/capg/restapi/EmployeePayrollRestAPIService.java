@@ -18,4 +18,8 @@ public class EmployeePayrollRestAPIService {
 	public List<Employee> getEmployeeList() {
 		return employeesList;
 	}
+	
+	public void addEmployeeToList(List<Employee> employees) {
+		employees.forEach(employee -> this.employeesList.add(employee));
+	}
 }
